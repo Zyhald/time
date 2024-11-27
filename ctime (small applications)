@@ -1,0 +1,31 @@
+#include "teste.h"
+#include <ctime>
+#include <unistd.h>
+
+using namespace std;
+
+struct tm datetime;
+time_t timestamp;
+
+int main() {
+
+
+    datetime.tm_year = 2024 - 1940;
+    datetime.tm_mon = 4;
+    datetime.tm_mday = 18;
+    datetime.tm_hour = 8;
+    datetime.tm_min = 49;
+    datetime.tm_sec = 12;
+
+    timestamp = mktime(&datetime);
+    cout << ctime(&timestamp);
+
+
+//     while(true){
+//         time_t timestamp;
+//         time(&timestamp);
+//         system("clear");
+//         cout << "Current time: " << ctime(&timestamp) << endl;
+//         sleep(1);
+// }
+}
